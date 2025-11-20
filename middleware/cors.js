@@ -7,12 +7,18 @@ const corsOptions = {
     
     const allowedOrigins = [
       'http://localhost:5173',
-      'http://localhost:3000'
+      'http://localhost:3000',
+      'https://todo-backend-4wnv7gaze-kipkoech-88s-projects.vercel.app',
+      'https://project-frontend-keylrtgo6-kipkoech-88s-projects.vercel.app'
     ];
     
-    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+    // Allow all subdomains of vercel.app in production
+    if (allowedOrigins.includes(origin) || 
+        origin.endsWith('.vercel.app') || 
+        process.env.NODE_ENV !== 'production') {
       callback(null, true);
     } else {
+      console.log('CORS blocked for origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
