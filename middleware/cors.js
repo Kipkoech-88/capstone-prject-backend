@@ -9,7 +9,7 @@ const corsOptions = {
       'http://localhost:5173',
       'http://localhost:3000',
       'https://todo-backend-4wnv7gaze-kipkoech-88s-projects.vercel.app',
-      'https://project-frontend-keylrtgo6-kipkoech-88s-projects.vercel.app'
+      'https://project-frontend-keylrtgo6-kipkoech-88s-projects.vercel.app',
     ];
     
     // Allow all subdomains of vercel.app in production
